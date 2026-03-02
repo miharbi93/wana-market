@@ -699,7 +699,7 @@ export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [sortOrder, setSortOrder] = useState<"low" | "high" | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 4;
+  const itemsPerPage = 8;
 
   // Add to cart
   const addToCart = (p: typeof products[0]) => {
@@ -769,7 +769,7 @@ export default function Home() {
             <button
               onClick={() => setSelectedCategory(null)}
               className={`flex items-center justify-center p-4 rounded-xl border font-medium transition-all ${
-                !selectedCategory ? "bg-blue-500 text-white shadow-lg scale-105" : "bg-white text-gray-700 hover:shadow-md"
+                !selectedCategory ? "bg-slate-500 text-white shadow-lg scale-105" : "bg-white text-gray-700 hover:shadow-md"
               }`}
             >
               All
@@ -784,7 +784,7 @@ export default function Home() {
                 transition={{ delay: i * 0.05 }}
                 whileHover={{ scale: 1.05 }}
                 className={`flex items-center justify-center p-4 rounded-xl border font-medium transition-all ${
-                  selectedCategory === c ? "bg-blue-500 text-white shadow-lg" : "bg-white text-gray-700 hover:shadow-md"
+                  selectedCategory === c ? "bg-slate-800 text-white shadow-lg" : "bg-white text-gray-700 hover:shadow-md"
                 }`}
               >
                 {c}
@@ -816,7 +816,7 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             className="text-2xl font-bold text-gray-800"
           >
-            Products
+           Popular Products
           </motion.h2>
 
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -860,7 +860,7 @@ export default function Home() {
                     <div className="flex items-center gap-3">
                       <button
                         onClick={() => addToCart(p)}
-                        className="px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition-all"
+                        className="px-4 py-2 rounded-lg bg-slate-700 text-white font-semibold shadow hover:bg-slate-900 transition-all"
                       >
                         Add to cart
                       </button>
@@ -885,7 +885,7 @@ export default function Home() {
                   key={i}
                   onClick={() => setCurrentPage(i + 1)}
                   className={`px-4 py-2 border rounded transition-all ${
-                    currentPage === i + 1 ? "bg-blue-500 text-white shadow-lg" : "bg-white text-gray-700 hover:bg-gray-100"
+                    currentPage === i + 1 ? "bg-slate-900 text-white shadow-lg" : "bg-white text-gray-700 hover:bg-gray-100"
                   }`}
                 >
                   {i + 1}
